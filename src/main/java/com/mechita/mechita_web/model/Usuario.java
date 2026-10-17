@@ -14,7 +14,7 @@ public class Usuario {
     @Column(name = "id_usuario")
     private Long idUsuario;
 
-    // ⭐ Relación con Rol
+    //  Relación con Rol
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_rol", nullable = false)
     private Rol rol;
@@ -30,8 +30,6 @@ public class Usuario {
 
     @Column(name = "fecha_registro", nullable = false)
     private LocalDateTime fechaRegistro = LocalDateTime.now();
-
-    // Helper: saber si es admin sin importar cómo se llame el rol
     public boolean esAdmin() {
         return rol != null && "ADMIN".equalsIgnoreCase(rol.getNombre());
     }
