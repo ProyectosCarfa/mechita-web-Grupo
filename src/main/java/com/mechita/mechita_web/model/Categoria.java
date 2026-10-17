@@ -19,7 +19,6 @@ public class Categoria {
     @Column(name = "descripcion", length = 255)
     private String descripcion;
 
-    // ⭐ NUEVO
     @Column(name = "imagen_url", length = 255)
     private String imagenUrl;
 
